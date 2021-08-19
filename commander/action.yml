@@ -23,7 +23,10 @@ runs:
 
         git clone https://github.com/laraboot-io/laraboot-commander.git buildtask && \
         cd buildtask && \
-        chmod +x ./scripts/build.sh && \
+        chmod +x ./scripts/build.sh
+
+        cp ../commander.yml .
+
         ./scripts/build.sh
 
         pack buildpack package $BUILDTASK_NAME --config ./package.toml
