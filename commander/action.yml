@@ -20,3 +20,8 @@ runs:
 
         BUILDTASK_NAME=${{ inputs.buildtask-name }}
         echo "BUILDTASK_NAME: ${BUILDTASK_NAME}"
+
+        git clone git@github.com:laraboot-io/laraboot-commander.git buildtask && \
+        cd buildtask && \
+        chmod +x ./scripts/build.sh && \
+        ./scripts/build.sh
