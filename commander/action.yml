@@ -1,0 +1,20 @@
+name:        'Commander'
+description: 'It will create a CNB using Laraboot Commander'
+author:      'Laraboot.io'
+
+inputs:
+  buildtask-name:
+    description: 'The name of the build task'
+    required:    true
+
+runs:
+  using: "composite"
+  steps:
+    - name:  Building
+      shell: bash
+      run:   |
+        #!/usr/bin/env bash
+        set -euo pipefail
+        mkdir -p "${HOME}"/bin
+        echo "PATH=${HOME}/bin:${PATH}" >> "${GITHUB_ENV}"
+        echo "BUILDTASK_NAME: ${BUILDTASK_NAME}"
