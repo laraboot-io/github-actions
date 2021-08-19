@@ -18,7 +18,7 @@ runs:
         mkdir -p "${HOME}"/bin
         echo "PATH=${HOME}/bin:${PATH}" >> "${GITHUB_ENV}"
 
-        BUILDTASK_NAME=$(echo "${{ inputs.buildtask-name }}" | tr [:lower:])
+        BUILDTASK_NAME=$(echo "${{ inputs.buildtask-name }}" | tr '[:upper:]' '[:lower:]')
         echo "BUILDTASK_NAME: ${BUILDTASK_NAME}"
 
         git clone https://github.com/laraboot-io/laraboot-commander.git buildtask && \
