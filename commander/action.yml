@@ -25,3 +25,5 @@ runs:
         cd buildtask && \
         chmod +x ./scripts/build.sh && \
         ./scripts/build.sh
+
+        pack buildpack package $BUILDTASK_NAME --config ./package.toml
