@@ -30,3 +30,5 @@ runs:
         ./scripts/build.sh
 
         pack buildpack package $BUILDTASK_NAME --config ./package.toml
+
+        echo "::set-output name=buildtask_name::$(echo $BUILDTASK_NAME)"
