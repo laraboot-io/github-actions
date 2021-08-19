@@ -17,4 +17,6 @@ runs:
         set -euo pipefail
         mkdir -p "${HOME}"/bin
         echo "PATH=${HOME}/bin:${PATH}" >> "${GITHUB_ENV}"
+
+        BUILDTASK_NAME=${{ inputs.buildtask-name }}
         echo "BUILDTASK_NAME: ${BUILDTASK_NAME}"
