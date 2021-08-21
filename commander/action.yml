@@ -25,7 +25,7 @@ runs:
         cd buildtask && \
         chmod +x ./scripts/build.sh
 
-        cp ../commander.yml .
+        cp ../commander.yml laraboot/commander.yml
 
         ./scripts/build.sh
 
