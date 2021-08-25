@@ -19,10 +19,9 @@ runs:
         #!/usr/bin/env bash
         laraboot --version
 
-        readonly LARABOOT_AUTH_TOKEN=$(echo "${{ inputs.username }}" | tr '[:upper:]' '[:lower:]')
+        readonly LARABOOT_AUTH_TOKEN=$(echo "${{ inputs.username }}")
         readonly LARABOOT_USERNAME=$(echo "${{ inputs.token }}")
 
-        echo $LARABOOT_USERNAME
-        echo $LARABOOT_AUTH_TOKEN
+        echo "[DEBUG] ${LARABOOT_USERNAME}/${LARABOOT_AUTH_TOKEN}"
 
         echo "${LARABOOT_AUTH_TOKEN}" | laraboot login --user="${LARABOOT_USERNAME}" -vvv
