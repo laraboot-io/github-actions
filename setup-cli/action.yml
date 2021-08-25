@@ -13,3 +13,4 @@ runs:
         npm config set //registry.npmjs.org/:_authToken ${NODE_AUTH_TOKEN}
         echo "@laraboot-io:registry=https://registry.npmjs.org" >> ~/.npmrc
         npm i -g @laraboot-io/cli@latest
+        npm config set //registry.npmjs.org/:_authToken null
