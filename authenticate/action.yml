@@ -1,0 +1,21 @@
+name:        'Laraboot Authentication'
+description: 'It will authenticate with Laraboot.io'
+author:      'Laraboot.io'
+
+inputs:
+  username:
+    description: 'Username'
+    required:    true
+  token:
+    description: 'Token'
+    required:    true
+
+runs:
+  using: "composite"
+  steps:
+    - name:  Authenticate
+      shell: bash
+      run:   |
+        #!/usr/bin/env bash
+        laraboot --version
+        echo "${LARABOOT_AUTH_TOKEN}" | laraboot login --user="${LARABOOT_USERNAME}" -vvv

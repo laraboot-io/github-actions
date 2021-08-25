@@ -1,0 +1,15 @@
+name:        'Laraboot Cli Setup'
+description: 'It will install laraboot.io cli'
+author:      'Laraboot.io'
+
+runs:
+  using: "composite"
+  steps:
+    - name:  Installing CLI
+      shell: bash
+      run:   |
+        #!/usr/bin/env bash
+
+        npm config set //registry.npmjs.org/:_authToken ${NODE_AUTH_TOKEN}
+        echo "@laraboot-io:registry=https://registry.npmjs.org" >> ~/.npmrc
+        npm i -g @laraboot-io/cli@latest
